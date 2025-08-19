@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AA Lab Calculator</title>
+  <!-- External CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header with Logo -->
+  <header>
+    <img src="logo.png" alt="AA Logo">
+    <nav>
+      <a href="#molarity">Molarity</a>
+      <a href="#dilution">Dilution</a>
+      <a href="#unit-conversion">Unit Conversion</a>
+      <a href="#ph">pH</a>
+      <a href="#normality">Normality</a>
+      <a href="#mol-weight">Molecular Weight</a>
+      <a href="#gas-law">Gas Law</a>
+      <a href="#temperature">Temperature</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <h1>AA Laboratory Calculator</h1>
+    <p>Free, simple, and reliable lab calculator tools for technicians and researchers.</p>
+
+    <!-- Molarity -->
+    <section id="molarity">
+      <h2>Molarity Calculator</h2>
+      <label for="molarMass">Molar Mass (g/mol):</label>
+      <input type="number" id="molarMass">
+      <label for="soluteMass">Solute Mass (g):</label>
+      <input type="number" id="soluteMass">
+      <label for="solutionVolume">Solution Volume (L):</label>
+      <input type="number" id="solutionVolume">
+      <button onclick="calculateMolarity()">Calculate</button>
+      <p id="molarityResult" class="result"></p>
+    </section>
+
+    <!-- Dilution -->
+    <section id="dilution">
+      <h2>Dilution Calculator</h2>
+      <label for="c1">Initial Concentration (C1):</label>
+      <input type="number" id="c1">
+      <label for="v1">Initial Volume (V1, L):</label>
+      <input type="number" id="v1">
+      <label for="c2">Final Concentration (C2):</label>
+      <input type="number" id="c2">
+      <button onclick="calculateDilution()">Calculate</button>
+      <p id="dilutionResult" class="result"></p>
+    </section>
+
+    <!-- Unit Conversion -->
+    <section id="unit-conversion">
+      <h2>Unit Conversion</h2>
+      <label for="value">Value:</label>
+      <input type="number" id="value">
+      <label for="fromUnit">From:</label>
+      <select id="fromUnit">
+        <option value="mg">mg</option>
+        <option value="g">g</option>
+        <option value="kg">kg</option>
+        <option value="ml">mL</option>
+        <option value="l">L</option>
+      </select>
+      <label for="toUnit">To:</label>
+      <select id="toUnit">
+        <option value="mg">mg</option>
+        <option value="g">g</option>
+        <option value="kg">kg</option>
+        <option value="ml">mL</option>
+        <option value="l">L</option>
+      </select>
+      <button onclick="convertUnits()">Convert</button>
+      <p id="conversionResult" class="result"></p>
+    </section>
+
+    <!-- pH -->
+    <section id="ph">
+      <h2>pH Calculator</h2>
+      <label for="hConcentration">[H+] Concentration (mol/L):</label>
+      <input type="number" id="hConcentration" step="any">
+      <button onclick="calculatePH()">Calculate</button>
+      <p id="phResult" class="result"></p>
+    </section>
+
+    <!-- Normality -->
+    <section id="normality">
+      <h2>Normality Calculator</h2>
+      <label for="equivalents">Number of Equivalents:</label>
+      <input type="number" id="equivalents">
+      <label for="solutionVolumeN">Solution Volume (L):</label>
+      <input type="number" id="solutionVolumeN">
+      <button onclick="calculateNormality()">Calculate</button>
+      <p id="normalityResult" class="result"></p>
+    </section>
+
+    <!-- Molecular Weight -->
+    <section id="mol-weight">
+      <h2>Molecular Weight Calculator</h2>
+      <label for="compoundMass">Compound Mass (g):</label>
+      <input type="number" id="compoundMass">
+      <label for="moles">Number of Moles:</label>
+      <input type="number" id="moles">
+      <button onclick="calculateMolWeight()">Calculate</button>
+      <p id="molWeightResult" class="result"></p>
+    </section>
+
+    <!-- Gas Law -->
+    <section id="gas-law">
+      <h2>Gas Law (PV = nRT)</h2>
+      <label for="n">Moles of Gas (n):</label>
+      <input type="number" id="n">
+      <label for="t">Temperature (K):</label>
+      <input type="number" id="t">
+      <label for="vGas">Volume (L):</label>
+      <input type="number" id="vGas">
+      <button onclick="calculateGasLaw()">Calculate</button>
+      <p id="gasResult" class="result"></p>
+    </section>
+
+    <!-- Temperature Conversion -->
+    <section id="temperature">
+      <h2>Temperature Conversion</h2>
+      <label for="tempValue">Temperature Value:</label>
+      <input type="number" id="tempValue">
+      <label for="fromTemp">From:</label>
+      <select id="fromTemp">
+        <option value="c">Celsius</option>
+        <option value="f">Fahrenheit</option>
+        <option value="k">Kelvin</option>
+      </select>
+      <label for="toTemp">To:</label>
+      <select id="toTemp">
+        <option value="c">Celsius</option>
+        <option value="f">Fahrenheit</option>
+        <option value="k">Kelvin</option>
+      </select>
+      <button onclick="convertTemperature()">Convert</button>
+      <p id="tempResult" class="result"></p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 AA Lab Calculator. Built for lab technicians with ❤️.</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+/* Global styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #1f1f1f;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo */
+header img {
+    height: 80px; /* Increased size */
+    filter: drop-shadow(0px 0px 8px #ffcc00); /* Glowing effect */
+    transition: transform 0.3s ease;
+}
+header img:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation */
+nav a {
+    color: #f0f0f0;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+nav a:hover {
+    color: #ffcc00;
+}
+
+/* Main sections */
+main {
+    padding: 30px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Section cards */
+section {
+    background-color: #1f1f1f;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    transition: transform 0.2s ease;
+}
+section:hover {
+    transform: scale(1.01);
+}
+
+/* Section titles */
+h2 {
+    color: #ffcc00;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Labels + Inputs */
+label {
+    display: block;
+    margin: 12px 0 6px;
+}
+input, select {
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 12px;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-size: 1em;
+}
+input:focus, select:focus {
+    outline: 2px solid #ffcc00;
+}
+
+/* Buttons */
+button {
+    background-color: #ffcc00;
+    color: #121212;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+button:hover {
+    background-color: #e6b800;
+    transform: translateY(-2px);
+}
+
+/* Results */
+p.result {
+    margin-top: 12px;
+    font-weight: bold;
+    background: #2a2a2a;
+    padding: 10px;
+    border-radius: 6px;
+    border-left: 4px solid #ffcc00;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    nav {
+        margin-top: 12px;
+    }
+    nav a {
+        margin: 0 10px;
+    }
+}
