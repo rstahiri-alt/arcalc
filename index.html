@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AA Lab Calculator</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -21,6 +21,10 @@
       <a href="#temperature">Temperature</a>
       <a href="#buffer">Buffer</a>
       <a href="#solutionPrep">Solution Prep</a>
+      <a href="#beerLambert">Beer–Lambert</a>
+      <a href="#percentSolution">% Solution</a>
+      <a href="#rpmRcf">RPM↔RCF</a>
+      <a href="#ppmConverter">ppm/ppb/%</a>
     </nav>
   </header>
 
@@ -33,9 +37,9 @@
     <!-- Molarity -->
     <section id="molarity" class="calculator">
       <h2>Molarity Calculator</h2>
-      <label>Molar Mass (g/mol): <input type="number" id="molarMass"> g/mol</label>
-      <label>Solute Mass (g): <input type="number" id="soluteMass"> g</label>
-      <label>Solution Volume (L): <input type="number" id="solutionVolume"> L</label>
+      <label>Molar Mass: <input type="number" id="molarMass" step="any"> g/mol</label>
+      <label>Solute Mass: <input type="number" id="soluteMass" step="any"> g</label>
+      <label>Solution Volume: <input type="number" id="solutionVolume" step="any"> L</label>
       <button onclick="calculateMolarity()">Calculate</button>
       <div class="result" id="molarityResult"></div>
     </section>
@@ -43,9 +47,9 @@
     <!-- Dilution -->
     <section id="dilution" class="calculator">
       <h2>Dilution Calculator</h2>
-      <label>C1 (mol/L): <input type="number" id="c1"> mol/L</label>
-      <label>V1 (L): <input type="number" id="v1"> L</label>
-      <label>C2 (mol/L): <input type="number" id="c2"> mol/L</label>
+      <label>C1: <input type="number" id="c1" step="any"> mol/L</label>
+      <label>V1: <input type="number" id="v1" step="any"> L</label>
+      <label>C2: <input type="number" id="c2" step="any"> mol/L</label>
       <button onclick="calculateDilution()">Calculate</button>
       <div class="result" id="dilutionResult"></div>
     </section>
@@ -53,8 +57,8 @@
     <!-- Unit Conversion -->
     <section id="unitConversion" class="calculator">
       <h2>Unit Conversion</h2>
-      <label>Value: <input type="number" id="value"></label>
-      <label>From: 
+      <label>Value: <input type="number" id="value" step="any"></label>
+      <label>From:
         <select id="fromUnit">
           <option value="mg">mg</option>
           <option value="g">g</option>
@@ -63,7 +67,7 @@
           <option value="l">L</option>
         </select>
       </label>
-      <label>To: 
+      <label>To:
         <select id="toUnit">
           <option value="mg">mg</option>
           <option value="g">g</option>
@@ -79,7 +83,7 @@
     <!-- pH -->
     <section id="ph" class="calculator">
       <h2>pH Calculator</h2>
-      <label>[H+] Concentration (mol/L): <input type="number" step="any" id="hConcentration"> mol/L</label>
+      <label>[H+] Concentration: <input type="number" step="any" id="hConcentration"> mol/L</label>
       <button onclick="calculatePH()">Calculate</button>
       <div class="result" id="phResult"></div>
     </section>
@@ -87,8 +91,8 @@
     <!-- Normality -->
     <section id="normality" class="calculator">
       <h2>Normality Calculator</h2>
-      <label>Equivalents (eq): <input type="number" id="equivalents"> eq</label>
-      <label>Solution Volume (L): <input type="number" id="solutionVolumeN"> L</label>
+      <label>Equivalents: <input type="number" id="equivalents" step="any"> eq</label>
+      <label>Solution Volume: <input type="number" id="solutionVolumeN" step="any"> L</label>
       <button onclick="calculateNormality()">Calculate</button>
       <div class="result" id="normalityResult"></div>
     </section>
@@ -96,8 +100,8 @@
     <!-- Molecular Weight -->
     <section id="molWeight" class="calculator">
       <h2>Molecular Weight Calculator</h2>
-      <label>Mass (g): <input type="number" id="compoundMass"> g</label>
-      <label>Moles (mol): <input type="number" id="moles"> mol</label>
+      <label>Mass: <input type="number" id="compoundMass" step="any"> g</label>
+      <label>Moles: <input type="number" id="moles" step="any"> mol</label>
       <button onclick="calculateMolWeight()">Calculate</button>
       <div class="result" id="molWeightResult"></div>
     </section>
@@ -105,9 +109,9 @@
     <!-- Gas Law -->
     <section id="gasLaw" class="calculator">
       <h2>Ideal Gas Law</h2>
-      <label>n (mol): <input type="number" id="n"> mol</label>
-      <label>T (K): <input type="number" id="t"> K</label>
-      <label>V (L): <input type="number" id="vGas"> L</label>
+      <label>n: <input type="number" id="n" step="any"> mol</label>
+      <label>T: <input type="number" id="t" step="any"> K</label>
+      <label>V: <input type="number" id="vGas" step="any"> L</label>
       <button onclick="calculateGasLaw()">Calculate</button>
       <div class="result" id="gasResult"></div>
     </section>
@@ -115,15 +119,15 @@
     <!-- Temperature -->
     <section id="temperature" class="calculator">
       <h2>Temperature Conversion</h2>
-      <label>Value: <input type="number" id="tempValue"></label>
-      <label>From: 
+      <label>Value: <input type="number" id="tempValue" step="any"></label>
+      <label>From:
         <select id="fromTemp">
           <option value="c">Celsius</option>
           <option value="f">Fahrenheit</option>
           <option value="k">Kelvin</option>
         </select>
       </label>
-      <label>To: 
+      <label>To:
         <select id="toTemp">
           <option value="c">Celsius</option>
           <option value="f">Fahrenheit</option>
@@ -134,24 +138,73 @@
       <div class="result" id="tempResult"></div>
     </section>
 
-    <!-- Buffer Preparation -->
+    <!-- Buffer (Henderson–Hasselbalch) -->
     <section id="buffer" class="calculator">
       <h2>Buffer Solution Prep (Henderson–Hasselbalch)</h2>
       <label>pKa: <input type="number" step="any" id="pKa"></label>
       <label>Desired pH: <input type="number" step="any" id="desiredPH"></label>
-      <label>[Acid] (mol/L): <input type="number" step="any" id="acidConc"> mol/L</label>
+      <label>[Acid] (initial): <input type="number" step="any" id="acidConc"> mol/L</label>
       <button onclick="calculateBuffer()">Calculate</button>
       <div class="result" id="bufferResult"></div>
     </section>
 
     <!-- General Solution Prep -->
     <section id="solutionPrep" class="calculator">
-      <h2>Solution Preparation</h2>
-      <label>Desired Concentration (mol/L): <input type="number" step="any" id="desiredConc"> mol/L</label>
-      <label>Desired Volume (L): <input type="number" step="any" id="desiredVol"> L</label>
-      <label>Molar Mass (g/mol): <input type="number" step="any" id="prepMolarMass"> g/mol</label>
+      <h2>Solution Preparation (from solid)</h2>
+      <label>Target Concentration: <input type="number" step="any" id="desiredConc"> mol/L</label>
+      <label>Final Volume: <input type="number" step="any" id="desiredVol"> L</label>
+      <label>Molar Mass: <input type="number" step="any" id="prepMolarMass"> g/mol</label>
       <button onclick="calculateSolutionPrep()">Calculate</button>
       <div class="result" id="solutionPrepResult"></div>
+    </section>
+
+    <!-- Beer–Lambert -->
+    <section id="beerLambert" class="calculator">
+      <h2>Beer–Lambert Law</h2>
+      <label>Molar Absorptivity (ε): <input type="number" id="epsilon" step="any"> L·mol⁻¹·cm⁻¹</label>
+      <label>Pathlength (l): <input type="number" id="pathlength" step="any"> cm</label>
+      <label>Concentration (c): <input type="number" id="bl_conc" step="any"> mol/L</label>
+      <button onclick="calculateBeerLambert()">Calculate Absorbance</button>
+      <div class="result" id="beerLambertResult"></div>
+    </section>
+
+    <!-- % Solution Prep (w/v, v/v) -->
+    <section id="percentSolution" class="calculator">
+      <h2>% Solution Preparation</h2>
+      <label>Type:
+        <select id="percentType">
+          <option value="w/v">% w/v (g per 100 mL)</option>
+          <option value="v/v">% v/v (mL per 100 mL)</option>
+        </select>
+      </label>
+      <label>Percent: <input type="number" id="percentValue" step="any"> %</label>
+      <label>Final Volume: <input type="number" id="percentVolume" step="any"> mL</label>
+      <button onclick="calculatePercentSolution()">Calculate</button>
+      <div class="result" id="percentSolutionResult"></div>
+    </section>
+
+    <!-- RPM ↔ RCF -->
+    <section id="rpmRcf" class="calculator">
+      <h2>RPM ↔ RCF (Centrifuge)</h2>
+      <label>Rotor radius r: <input type="number" id="radius" step="any"> cm</label>
+      <label>RPM: <input type="number" id="rpm" step="any"> rpm</label>
+      <button onclick="calculateRCF()">Compute RCF</button>
+      <div class="result" id="rcfResult"></div>
+    </section>
+
+    <!-- ppm / ppb / % -->
+    <section id="ppmConverter" class="calculator">
+      <h2>ppm / ppb / % Converter</h2>
+      <label>Value: <input type="number" id="ppmInput" step="any"></label>
+      <label>Unit:
+        <select id="ppmUnit">
+          <option value="ppm">ppm</option>
+          <option value="ppb">ppb</option>
+          <option value="%">%</option>
+        </select>
+      </label>
+      <button onclick="convertPPM()">Convert</button>
+      <div class="result" id="ppmResult"></div>
     </section>
   </main>
 
